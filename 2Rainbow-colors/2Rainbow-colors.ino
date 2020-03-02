@@ -21,5 +21,13 @@ void setup()
 
 void loop() 
 {
-  
+  leds = 0;
+  updateShiftRegister();
+  delay(tDelay);
+  for (int i = 0; i < 8; i++)
+  {
+    bitSet(leds, i);
+    updateShiftRegister();
+    delay(tDelay);
+  }
 }
