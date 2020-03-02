@@ -1,4 +1,4 @@
-int tDelay = 1000;
+int lightPin = 0;
 int latchPin = 11;
 int clockPin = 9;
 int dataPin = 12;
@@ -21,13 +21,15 @@ void setup()
 
 void loop()
 {
+  int reading = analogRead(lightPin);
+  int numLEDSLit = reading / 57; //all leds lit at 1k
+  if (numLEDSLit > 8)
+    numLEDSLit = 8;
+  
   leds = 0;
-  updateShiftRegister();
-  delay(tDelay);
-  for (int i = 0; i < 8; i++)
+  for (int i = 0; i < numLEDSLit; i++)
   {
-    bitSet(leds, i);
-    updateShiftRegister();
-    delay(tDelay);
+    leds = leds + (1 << i); // sets the i'th bit
   }
+  updateShiftRegister();
 }
