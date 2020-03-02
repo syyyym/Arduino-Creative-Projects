@@ -3,7 +3,14 @@ int latchPin = 11;
 int clockPin = 9;
 int dataPin = 12;
 
-byte leds = 0;
+byte leds = 0; //pattern of the 7 leds
+
+void updateShiftRegister()
+{
+  digitalWrite(latchPin, LOW);
+  shiftOut(dataPin, clockPin, LSBFIRST, leds); //LSB - least significant bit
+  digitalWrite(latchPin, HIGH);
+}
 
 void setup() 
 {
