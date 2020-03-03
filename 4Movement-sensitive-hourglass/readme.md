@@ -4,8 +4,8 @@
 ## Creative Effect
 
 Just like an hourglass, the leds light up gradually, simulating the passing of time. 
-When the total time has finished, there is also a sound. The timer can be reset by movement 
-- turning it over. The time interval can be changed, from seconds, minutes, to hours.
+When the total time has finished, there is also a sound. The timer can be reset by 
+movement - turning it over. The time interval can be changed, from seconds, minutes, to hours.
 
 ## Description
 
