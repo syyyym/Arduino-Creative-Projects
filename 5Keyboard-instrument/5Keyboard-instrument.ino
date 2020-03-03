@@ -7,5 +7,7 @@ void setup()
 
 void loop()
 {
-  
+  int keyVal = analogRead(A0);
+
+  Serial.println(keyVal);
 } 
