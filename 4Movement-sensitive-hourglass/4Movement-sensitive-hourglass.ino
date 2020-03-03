@@ -37,4 +37,17 @@ void loop()
     }
     led++;
   }
+
+  switchState = digitalRead(switchPin);
+
+  if (switchState != prevSwitchState)
+  {
+    for (int x = 2; x < 8; x++) {
+      digitalWrite(x, LOW);
+    }
+    led = 2;
+    noTone(buzzerPin);
+    previousTime = currentTime;
+  }
+  prevSwitchState = switchState;
 }
