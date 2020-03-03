@@ -22,6 +22,19 @@ void setup()
 } 
 
 void loop() 
-{  
+{
+  unsigned long currentTime = millis();
 
+  if (currentTime - previousTime > interval)
+  {
+    previousTime = currentTime;
+    digitalWrite(led, HIGH);
+    if (led == 7)
+    {
+      tone(buzzerPin, note);
+      delay(1);
+      tone(buzzerPin, note1);
+    }
+    led++;
+  }
 }
